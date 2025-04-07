@@ -1,0 +1,9 @@
+#!name=作业帮会员
+#!desc=作业帮会员
+#!system=ios
+
+[Script]
+VIP = type=http-response,requires-body=1,timeout=10,pattern=^https://napi.zybang.com/napi/user/userinfo,script-path=https://raw.githubusercontent.com/38506243/zyb/main/zyb.js
+
+[MITM]
+hostname = %APPEND% napi.zybang.com
