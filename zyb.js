@@ -18,7 +18,18 @@ try {
             body.data.user.vipLevel = 1;
             $.log("作业帮会员已开启:\n" + JSON.stringify(body));
             $.done({body: JSON.stringify(body)});
-        } else {
+        }
+        else if ($request.url.indexOf("apivip.zuoyebang.com/vipsearch/search/vipinfo") > -1) {
+            let body = JSON.parse($response.body);
+            body.data.videoCardCount = 99;
+            body.data.status = 1;
+            body.data.payResult = 1;
+            body.data.expireDays = 99;
+            body.data.stopTime = 4102329600;
+            $.log("作业帮会员已开启:\n" + JSON.stringify(body));
+            $.done({body: JSON.stringify(body)});
+        }
+        else {
             $.done();
         }
     }
